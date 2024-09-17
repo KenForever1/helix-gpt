@@ -1,5 +1,5 @@
 import { expect, test, mock, jest } from "bun:test";
-import Ollama from "./ollama";
+import Ollama from "./ollama.ts";
 
 const ollama = new Ollama();
 

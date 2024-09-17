@@ -1,15 +1,18 @@
-import Lsp from "./models/lsp"
-import { commands } from "./constants"
-import * as handlers from "./events"
-import { log } from "./utils"
-import config from "./config"
-import assistant from "./models/assistant"
-import copilotAuth from "./models/copilot-auth"
-import codeiumAuth from "./models/codeium-auth"
-import Github from "./providers/github"
-import Openai from "./providers/openai"
-import Codeium from "./providers/codeium"
-import Ollama from "./providers/ollama"
+import "./deno-compat.ts";
+import Lsp from "./models/lsp.ts"
+import { commands } from "./constants.ts"
+import * as handlers from "./events/index.ts"
+import { log } from "./utils.ts"
+import config from "./config.ts"
+import assistant from "./models/assistant.ts"
+import copilotAuth from "./models/copilot-auth.ts"
+import codeiumAuth from "./models/codeium-auth.ts"
+import Github from "./providers/github.ts"
+import Openai from "./providers/openai.ts"
+import Codeium from "./providers/codeium.ts"
+import Ollama from "./providers/ollama.ts"
+import process from "node:process";
+
 import Qianwen from "./providers/qianwen.ts"
 
 if (config.authCopilot) {

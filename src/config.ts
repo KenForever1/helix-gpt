@@ -1,5 +1,6 @@
-import { parseArgs } from "util"
-import { context } from "./constants"
+import { runningInDeno } from "./deno-compat.ts";
+const { parseArgs } = await import(runningInDeno() ? "./deno-compat.ts" : "util")
+import { context } from "./constants.ts"
 
 const { values } = parseArgs({
   args: Bun.argv,

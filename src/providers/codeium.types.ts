@@ -1,4 +1,4 @@
-import { uniqueStringArray } from "../utils"
+import { uniqueStringArray } from "../utils.ts"
 
 export class Completion extends Array<string> {
   constructor(...items: string[]) {

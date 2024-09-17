@@ -1,5 +1,5 @@
 import { expect, test } from "bun:test";
-import Github from "./github"
+import Github from "./github.ts"
 
 const github = new Github()
 

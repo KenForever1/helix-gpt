@@ -1,7 +1,7 @@
 import EventEmitter from "node:events"
-import { log } from "../utils"
-import type { Buffer, Range, Diagnostic, EventRequest } from "./lsp.types"
-import { Event, DiagnosticSeverity } from "./lsp.types"
+import { log } from "../utils.ts"
+import type { Buffer, Range, Diagnostic, EventRequest } from "./lsp.types.ts"
+import { Event, DiagnosticSeverity } from "./lsp.types.ts"
 
 export class Service {
   emitter: EventEmitter
@@ -130,7 +130,9 @@ export class Service {
     })
 
     const len = (new TextEncoder()).encode(request).length
-    process.stdout.write(`Content-Length: ${len}\r\n\r\n${request}`)
+    // process.stdout.write(`Content-Length: ${len}\r\n\r\n${request}`)
+    //NOTE: for some reason, process.stdout.write lead to a parse error with deno
+    console.log(`Content-Length: ${len}\r\n\r\n${request}`)
     log("sent request", request)
   }
 

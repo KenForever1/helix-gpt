@@ -1,5 +1,5 @@
 import { expect, test } from "bun:test";
-import Lsp from "./lsp"
+import Lsp from "./lsp.ts"
 
 test("parseLine", async () => {
   const lsp = new Lsp.Service({})

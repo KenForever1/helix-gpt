@@ -1,5 +1,5 @@
 import { expect, test, mock, jest } from "bun:test";
-import Openai from "./openai"
+import Openai from "./openai.ts"
 
 const openai = new Openai()
 

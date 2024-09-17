@@ -1,5 +1,5 @@
 import { expect, test } from "bun:test";
-import { extractCodeBlock, parseQuery, getContent } from "./utils"
+import { extractCodeBlock, parseQuery, getContent } from "./utils.ts"
 
 test("extractCodeBlock", async () => {
   const content = `\`\`\`typescript

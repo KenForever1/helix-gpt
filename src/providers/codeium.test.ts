@@ -1,5 +1,5 @@
 import { expect, test } from "bun:test";
-import Codeium from "./codeium"
+import Codeium from "./codeium.ts"
 
 const codeium = new Codeium()
 
