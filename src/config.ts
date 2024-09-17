@@ -40,6 +40,26 @@ const { values } = parseArgs({
       type: 'string',
       default: Bun.env.OPENAI_ENDPOINT ?? 'https://api.openai.com/v1'
     },
+    qianwenKey: {
+      type: 'string',
+      default: Bun.env.QIANWEN_API_KEY
+    },
+    qianwenContext: {
+      type: 'string',
+      default: Bun.env.QIANWEN_CONTEXT?.length ? Bun.env.QIANWEN_CONTEXT : context.qianwen
+    },
+    qianwenModel: {
+      type: 'string',
+      default: Bun.env.QIANWEN_MODEL ?? "qwen1.5-1.8b-chat"
+    },
+    qianwenMaxTokens: {
+      type: 'string',
+      default: Bun.env.QIANWEN_MAX_TOKENS ?? "2000"
+    },
+    qianwenEndpoint: {
+      type: 'string',
+      default: Bun.env.QIANWEN_ENDPOINT ?? 'https://dashscope.aliyuncs.com/'
+    },
     copilotEndpoint: {
       type: 'string',
       default: Bun.env.GITHUB_ENDPOINT ?? 'https://api.githubcopilot.com'
@@ -106,6 +126,7 @@ const { values } = parseArgs({
 if (
   !Bun.env.TEST_RUNNER?.length &&
   !values.openaiKey?.length &&
+  !values.qianwenKey?.length &&
   !values.copilotApiKey?.length &&
   !values.authCopilot &&
   !values.authCodeium &&
